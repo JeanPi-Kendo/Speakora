@@ -1,10 +1,11 @@
 # Speakora
-> Descripción del Proyecto
-Este proyecto consiste en una página web enfocada en el fortalecimiento y práctica de las habilidades de habla (speaking skills) en diferentes idiomas. La plataforma permitirá a los usuarios seleccionar el idioma que desean practicar y mejorar su pronunciación mediante ejercicios interactivos de vocabulario.
 
+Descripción del Proyecto
+Este proyecto consiste en una página web enfocada en el fortalecimiento y práctica de las habilidades de habla (speaking skills) en diferentes idiomas. La plataforma permitirá a los usuarios seleccionar el idioma que desean practicar y mejorar su pronunciación mediante ejercicios interactivos de vocabulario.
 El objetivo principal es ayudar a los usuarios a desarrollar una mejor pronunciación, fluidez y confianza al hablar en un idioma extranjero a través de prácticas constantes y retroalimentación inmediata.
 
-> Funcionamiento de la Plataforma
+Funcionamiento de la Plataforma
+
 El usuario selecciona el idioma que desea practicar.
 La página mostrará palabras de vocabulario una por una.
 El usuario deberá pronunciar correctamente cada palabra usando su voz.
@@ -14,7 +15,8 @@ La plataforma indicará que la pronunciación no fue correcta.
 Un sistema de voz reproducirá la pronunciación adecuada de la palabra.
 El usuario podrá repetir la práctica para mejorar progresivamente su pronunciación.
 
-> Objetivos del Proyecto
+Objetivos del Proyecto
+
 Mejorar las habilidades de habla y pronunciación.
 Facilitar el aprendizaje de vocabulario en distintos idiomas.
 Brindar retroalimentación inmediata al usuario.
@@ -28,7 +30,8 @@ Síntesis de voz: Speech Synthesis API
 Backend (opcional): Node.js / Express
 Base de datos (opcional): MongoDB o Firebase
 
-> Características Principales
+Características Principales
+
 Selección de idioma.
 Prácticas de pronunciación palabra por palabra.
 Reconocimiento de voz en tiempo real.
@@ -37,13 +40,14 @@ Sistema de pronunciación por voz.
 Interfaz amigable e interactiva.
 Seguimiento del progreso del usuario (futuro).
 
-> Estado del Proyecto
+Estado del Proyecto
+
 Proyecto actualmente en fase de planificación y diseño.
 
-> Idea Principal
+Idea Principal
 
 La finalidad de esta plataforma es convertir la práctica de pronunciación en una experiencia accesible, práctica e interactiva, permitiendo que cualquier usuario pueda mejorar sus habilidades de habla desde cualquier lugar y a su propio ritmo.
 
-📄 Licencia
+Licencia
 
 Este proyecto podrá utilizar una licencia de código abierto en el futuro.
