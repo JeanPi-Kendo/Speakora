@@ -2,21 +2,23 @@ Este es el tipo de mi proyecto:
 
 Aplicación web interactiva enfocada en el aprendizaje de idiomas y el fortalecimiento de las habilidades de pronunciación (speaking skills) mediante reconocimiento de voz, retroalimentación automática y práctica guiada de vocabulario.
 
-Las bibliotecas que voy a utilizar:
-SpeechRecognition
-Whisper
-PyAudio
-gTTS
-pyttsx3
-FastAPI
-librosa
-pydub
-phonemizer
-SQLite
-React
+Las posibles bibliotecas que voy a utilizar:
+* SpeechRecognition
+* Whisper
+* PyAudio
+* gTTS
+* pyttsx3
+* FastAPI
+* librosa
+* pydub
+* phonemizer
+* SQLite
+* React
+  
 Referencias útiles:
-Referencia 1
-Referencia N
+* https://github.com/JeanPi-Kendo/Idioms
+
+
 Los artículos de la guía que me ayudarán durante el desarrollo
 
 Comprender cómo funciona el reconocimiento de voz en Python y cómo capturar audio desde el micrófono para analizar pronunciación. SpeechRecognition Documentation
