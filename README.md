@@ -1,6 +1,5 @@
 # Speakora
 
-Descripción del Proyecto
 Este proyecto consiste en una página web enfocada en el fortalecimiento y práctica de las habilidades de habla (speaking skills) en diferentes idiomas. La plataforma permitirá a los usuarios seleccionar el idioma que desean practicar y mejorar su pronunciación mediante ejercicios interactivos de vocabulario.
 El objetivo principal es ayudar a los usuarios a desarrollar una mejor pronunciación, fluidez y confianza al hablar en un idioma extranjero a través de prácticas constantes y retroalimentación inmediata.
 
