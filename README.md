@@ -21,13 +21,6 @@ Facilitar el aprendizaje de vocabulario en distintos idiomas.
 Brindar retroalimentación inmediata al usuario.
 Crear una experiencia interactiva y dinámica para el aprendizaje de idiomas.
 Ayudar a los usuarios a ganar confianza al hablar.
-🛠️ Posibles Tecnologías a Utilizar
-Frontend: HTML, CSS, JavaScript
-Frameworks: React.js o Next.js
-Reconocimiento de voz: Web Speech API
-Síntesis de voz: Speech Synthesis API
-Backend (opcional): Node.js / Express
-Base de datos (opcional): MongoDB o Firebase
 
 Características Principales
 
