@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/select_level.css') }}">
+    <title>Select Level</title>
+</head>
+
+<body>
+
+<h1>{{ language.title() }}</h1>
+
+<p>Select your level:</p>
+
+<form action="/vocabulary">
+
+    <input type="hidden"
+           name="language"
+           value="{{ language }}">
+
+    <button name="level" value="beginner">
+        Beginner
+    </button>
+
+    <button name="level" value="intermediate">
+        Intermediate
+    </button>
+
+    <button name="level" value="advanced">
+        Advanced
+    </button>
+
+</form>
+
+</body>
+</html>
