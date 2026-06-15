@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vocabulary.css') }}">
+    <title>Vocabulary</title>
+
+<style>
+
+body{
+    text-align:center;
+}
+
+#feedback{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    display:none;
+
+}
+
+.bad{
+
+    background:#ffdcdc;
+
+}
+
+.medium{
+
+    background:#fff2cc;
+
+}
+
+.good{
+
+    background:#d8ffd8;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Vocabulary Practice</h1>
+
+<h2>{{ word.word }}</h2>
+
+<audio
+controls
+src="{{ url_for('static', filename=audio) }}">
+</audio>
+
+<br><br>
+
+<button onclick="startRecording()">
+🎤 Start Recording
+</button>
+
+<button onclick="stopRecording()">
+⏹ Stop
+</button>
+
+<br><br>
+
+<div id="feedback"></div>
+
+<br>
+
+<div id="next-container" style="display:none;">
+
+<a href="{{ url_for(
+'auth.vocabulary',
+language=language,
+level=level,
+index=index+1
+) }}">
+
+Next →
+
+</a>
+
+</div>
+
+
+<script>
+
+let recorder
+
+let chunks=[]
+
+let attempts=0
+
+
+async function startRecording(){
+
+const stream=
+await navigator
+.mediaDevices
+.getUserMedia({
+audio:true
+})
+
+recorder=
+new MediaRecorder(
+stream
+)
+
+chunks=[]
+
+recorder.ondataavailable=
+e=>
+chunks.push(
+e.data
+)
+
+recorder.start()
+
+}
+
+
+
+async function stopRecording(){
+
+recorder.stop()
+
+recorder.onstop=
+async()=>{
+
+attempts++
+
+const blob=
+new Blob(
+chunks,
+{
+type:
+"audio/webm"
+}
+)
+
+const form=
+new FormData()
+
+form.append(
+"audio",
+blob,
+"recording.webm"
+)
+
+form.append(
+    "word",
+    "{{ word.word }}"
+)
+
+form.append(
+    "attempts",
+    attempts
+)
+
+const response=
+await fetch(
+"/upload-audio",
+{
+method:"POST",
+body:form
+}
+)
+
+const result=
+await response.text()
+
+const match=
+result.match(
+/Score:\s*(\d+)/
+)
+
+const feedback=
+document.getElementById(
+"feedback"
+)
+
+feedback.style.display=
+"block"
+
+
+if(match){
+
+const score=
+parseInt(
+match[1]
+)
+
+let message=""
+
+let style=""
+
+
+if(
+score<60
+){
+
+style="bad"
+
+message=
+`
+<h3>🔴 Keep trying</h3>
+
+${result}
+
+Attempts:
+${attempts}
+
+<br><br>
+
+Listen carefully and repeat.
+`
+
+}
+
+
+else if(
+score<80
+){
+
+style=
+"medium"
+
+message=
+`
+<h3>🟡 Almost there</h3>
+
+${result}
+
+Attempts:
+${attempts}
+
+<br><br>
+
+Try speaking slower.
+`
+
+}
+
+
+else{
+
+style=
+"good"
+
+message=
+`
+<h3>🟢 Excellent!</h3>
+
+${result}
+
+Attempts:
+${attempts}
+
+<br><br>
+
+You can continue.
+`
+
+document
+.getElementById(
+"next-container"
+)
+.style
+.display=
+"block"
+
+}
+
+
+feedback.className=
+style
+
+feedback.innerHTML=
+message
+
+}
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
