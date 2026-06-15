@@ -1,0 +1,80 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Fondo y estructura */
+body {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #333;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Encabezado principal */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Subtítulos de idiomas */
+h2 {
+  font-size: 1.5rem;
+  margin: 20px 0 10px;
+  color: #0077ff;
+}
+
+/* Texto */
+p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* Barra de progreso */
+.progress-container {
+  width: 80%;
+  max-width: 400px;
+  height: 25px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.2);
+  margin: 15px auto;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #00c853, #b2ff59);
+  transition: width 0.8s ease;
+}
+
+/* Separador */
+hr {
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+  margin: 30px 0;
+}
+
+/* Enlace de regreso */
+a {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  background: #0077ff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+a:hover {
+  background: #005fcc;
+}
