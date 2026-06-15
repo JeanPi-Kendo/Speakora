@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+
+<title>
+
+Profile
+
+</title>
+
+<style>
+
+.progress-container{
+
+width:300px;
+
+height:20px;
+
+border:1px solid black;
+
+margin-bottom:20px;
+
+}
+
+
+.progress-bar{
+
+height:100%;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>
+
+👤 Your Progress
+
+</h1>
+
+
+{% for s in stats %}
+
+<h2>
+
+{{ s.language.title() }}
+
+</h2>
+
+
+<p>
+
+Completed:
+{{ s.completed }}
+
+</p>
+
+
+<p>
+
+Average score:
+{{ s.score }}%
+
+</p>
+
+
+<p>
+
+Average attempts:
+{{ s.attempts }}
+
+</p>
+
+
+<p>
+
+Progress:
+{{ s.percent }}%
+
+</p>
+
+
+<div
+class="progress-container"
+>
+
+<div
+class="progress-bar"
+data-width="{{ s.percent }}"
+>
+
+</div>
+
+</div>
+
+
+<hr>
+
+{% endfor %}
+
+
+<a href="/dashboard">
+
+← Back
+
+</a>
+
+
+<script>
+
+document
+.querySelectorAll(
+".progress-bar"
+)
+.forEach(
+
+(bar)=>{
+
+bar.style.width =
+bar.dataset.width
++
+"%"
+
+bar.style.background =
+"green"
+
+}
+
+)
+
+</script>
+
+
+</body>
+
+</html>
